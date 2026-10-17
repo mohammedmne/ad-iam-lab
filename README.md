@@ -46,6 +46,38 @@ lab.local
 
 No passwords are stored in any script. `scripts/Setup-Lab.ps1` rebuilds the structure above on a fresh domain. It was written after I built the lab by hand and has not been re-run end to end, so test it in a lab first.
 
+
+## Screenshots
+
+Delegation of control: giving IT-Support the password reset task on the IT OU
+
+<img width="508" height="433" alt="delegation-wizard" src="https://github.com/user-attachments/assets/acce72bb-9dd8-49ce-83f5-a5d591df530e" />
+
+
+
+Delegation verified with dsacls: IT-Support has the Reset Password right
+
+<img width="340" height="103" alt="dsacls-delegation" src="https://github.com/user-attachments/assets/31580e27-aca6-4a75-8186-f9a266b1c228" />
+
+
+
+Fine-grained password policy for IT-Support (12 characters, lockout after 3 attempts for 30 minutes)
+
+<img width="934" height="505" alt="fgpp-settings" src="https://github.com/user-attachments/assets/c637b936-ab2b-47c1-bd84-ef15f123ec2a" />
+
+
+
+User policy applied to a Sales user, and the restriction message the user sees
+
+<img width="626" height="346" alt="gpo-user-restriction" src="https://github.com/user-attachments/assets/789d4bfd-5522-4af3-bb73-22b06a0c9a1a" />
+
+
+
+Login screen after repeated wrong passwords on a locked-out account
+
+<img width="719" height="445" alt="account-lockout" src="https://github.com/user-attachments/assets/c705b8df-8f46-4b02-9fb0-86183fe92659" />
+
+
 ## Troubleshooting write-ups
 
 **Domain join refused: "This device is joined to Azure AD"**
